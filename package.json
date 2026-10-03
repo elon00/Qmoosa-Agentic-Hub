@@ -8,6 +8,7 @@
     "apps/*"
   ],
   "scripts": {
+    "finish": "node scripts/one-click-finish.mjs",
     "verify": "node scripts/verify-all.mjs",
     "compile:contracts": "npx hardhat compile",
     "test:contracts": "npx hardhat test test/contracts.test.cjs",
