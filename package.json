@@ -10,6 +10,8 @@
   "scripts": {
     "finish": "node scripts/one-click-finish.mjs",
     "verify": "node scripts/verify-all.mjs",
+    "verify:onchain": "node scripts/verify-onchain.mjs",
+    "deploy:polkadotTestnet": "npx hardhat run scripts/deploy-polkadot-testnet.cjs --network polkadotTestnet",
     "compile:contracts": "npx hardhat compile",
     "test:contracts": "npx hardhat test test/contracts.test.cjs",
     "test:pqc": "node --experimental-strip-types packages/pqc-security/test/pqc.test.mjs",
