@@ -1,0 +1,50 @@
+{
+  "name": "qmoosa-agentic-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Qmoosa Agentic Hub - Polkadot Hub, x402 Bazaar Protocol, Conway Automaton, PQC Security, and Multi-model AI Agents",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify-all.mjs",
+    "compile:contracts": "npx hardhat compile",
+    "test:contracts": "npx hardhat test test/contracts.test.cjs",
+    "test:pqc": "node --experimental-strip-types packages/pqc-security/test/pqc.test.mjs",
+    "test:x402": "node --experimental-strip-types test/x402-flow.test.mjs",
+    "test": "npm run verify",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "dev": "npm run dev --workspace=apps/web"
+  },
+  "keywords": [
+    "polkadot",
+    "polkadot-hub",
+    "asset-hub",
+    "x402",
+    "conway-game-of-life",
+    "pqc",
+    "post-quantum",
+    "ai-agentics",
+    "token-launchpad",
+    "web4"
+  ],
+  "author": "Solo Open-Source Developer",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@noble/hashes": "^2.4.0",
+    "@noble/post-quantum": "^0.7.1",
+    "@nomicfoundation/hardhat-ethers": "^3.1.3",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.14.0",
+    "chai": "^6.3.0",
+    "ethers": "^6.17.0",
+    "hardhat": "^2.29.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "type": "module"
+}
