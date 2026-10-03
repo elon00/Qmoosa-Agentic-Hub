@@ -1,35 +1,63 @@
-# Polkadot Coding Agent Guidelines (AGENTS.md)
+# Polkadot Coding Agent Guidelines
 
-This file instructs AI coding assistants (Cursor, Claude Code, Cline, Windsurf, Antigravity) working on the **Qmoosa Agentic Hub**.
+This repository is configured for AI coding agents working on **Qmoosa Agentic Hub**.
 
-## 1. Core Principles
-- **No Private Keys in Code or AI Prompts**: Private keys and seed phrases MUST NEVER be logged, passed to LLMs, or committed to version control. All transactions use **Host-mediated signing** (e.g. extension wallets like Talisman, SubWallet, Polkadot.js, or MetaMask).
-- **Target Polkadot Hub / Asset Hub**: We target Polkadot Hub / Asset Hub smart contracts running on `pallet-revive` / PolkaVM with Solidity/Rust capability, avoiding parachain overhead for solo MVP.
-- **x402 V2 Compatibility**: Autonomous agent-to-agent monetization conforms to HTTP 402 specifications with a Polkadot settlement adapter.
-- **PQC Defense-in-Depth**: Post-Quantum Cryptography (ML-DSA-65) is applied at the application/payload level for artifact signing and agent identity, complementing classical consensus signatures.
+## Mandatory safety rules
 
-## 2. Directory Structure
+- Never place private keys, seed phrases, mnemonics, or wallet secrets in prompts, source code, logs, or agent tool arguments.
+- Read, inspect, encode, and dry-run operations may be prepared autonomously.
+- Any on-chain submission must require explicit human approval and a host-managed signer reference.
+- Use structured machine-readable output for Polkadot CLI operations.
+- Keep local simulation clearly separated from real Polkadot Hub TestNet deployment evidence.
+
+## Polkadot AI agent resources
+
+The repository follows the current Polkadot developer AI-agent setup pattern:
+
+- Polkadot AI-agent setup: https://docs.polkadot.com/apps/get-started/set-up-your-ai-agent/
+- Polkadot Developer Docs: https://docs.polkadot.com/
+- Polkadot CLI / `dot` agent skill: https://github.com/paritytech/polkadot-cli
+- Product SDK skills (experimental, use only when the app architecture needs Polkadot Products/Host APIs): https://github.com/paritytech/product-sdk
+- Hardhat on Polkadot Hub: https://docs.polkadot.com/smart-contracts/dev-environments/hardhat/
+
+The `dot` CLI integration is pinned in repository automation. To install its version-matched agent skill locally:
+
+```bash
+npm run agent:setup
 ```
-qmoosa-polkadot/
-├── contracts/             # Solidity smart contracts for Polkadot Hub (pallet-revive)
+
+For Claude Code instead of Codex:
+
+```bash
+npm run agent:setup -- --claude
+```
+
+## Repository agent architecture
+
+```text
+Qmoosa-Agentic-Hub/
+├── contracts/                       # Solidity contracts
 ├── packages/
-│   ├── polkadot-sdk/      # Polkadot chain-client & RPC interactions
-│   ├── x402-bazaar/       # HTTP 402 Bazaar Protocol payment & settlement adapter
-│   ├── pqc-security/      # Post-Quantum ML-DSA signing & verification library
-│   ├── conway-automaton/  # Game of Life event-driven automation engine for agents
-│   ├── multi-wallet/      # Substrate + EVM unified wallet adapter & QR generator
-│   └── ai-orchestrator/   # Multi-model chatbot router with safe tool calling
-└── apps/
-    └── web/               # Next.js / React frontend UI dashboard
+│   ├── ai-orchestrator/             # Multi-model routing + PolkadotAgentToolkit
+│   ├── x402-bazaar/
+│   ├── pqc-security/
+│   ├── conway-automaton/
+│   └── multi-wallet/
+├── scripts/
+│   ├── setup-polkadot-agent-toolkit.mjs
+│   ├── verify-agent-toolkit.mjs
+│   ├── verify-all.mjs
+│   └── one-click-finish.mjs
+├── test/
+│   └── polkadot-agent-toolkit.test.mjs
+└── .github/
+    ├── copilot-instructions.md
+    └── workflows/verify.yml
 ```
 
-## 3. Smart Contract Patterns (Polkadot Hub / pallet-revive)
-- Use OpenZeppelin-compatible patterns.
-- Follow ERC-20 / ERC-721 conventions adapted for Polkadot Asset Hub.
-- Use explicit role-based access control (`AccessControl`) for mint, burn, pause, and launchpad distribution.
-- Ensure all payments route through the treasury and launchpad liquidity contracts with reentrancy protection (`ReentrancyGuard`).
+## Smart-contract and chain rules
 
-## 4. x402 Bazaar Protocol Standards
-- Returns HTTP status `402 Payment Required` when unauthenticated agent calls premium endpoints.
-- Response includes `X-Payment-Address`, `X-Payment-Amount`, `X-Payment-Asset`, and `X-Payment-Challenge`.
-- Agent pays on Polkadot Asset Hub, submits `X-Payment-Proof: <txHash>`, backend verifies settlement and unlocks response.
+- Target Polkadot Hub-compatible smart contracts and verify chain-specific behavior on a local Polkadot-compatible node or TestNet before representing anything as live.
+- Do not treat Hardhat's local EVM as proof of Polkadot TestNet deployment.
+- x402 settlement proof must be verified independently before unlocking paid resources.
+- PQC signatures protect application payloads and artifacts; they do not replace Polkadot consensus signatures.

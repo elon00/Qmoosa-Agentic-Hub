@@ -96,3 +96,41 @@ cp .env.example .env
 ### 3. Deployment & Testing
 - **Testnet**: Westend Asset Hub (`wss://westend-asset-hub-rpc.polkadot.io`)
 - **Mainnet**: Polkadot Asset Hub (`wss://polkadot-asset-hub-rpc.polkadot.io`)
+
+---
+
+## 🤖 Polkadot AI Agent Toolkit
+
+Qmoosa Agentic Hub now includes a repository-native **Polkadot AI Agent Toolkit** in
+`packages/ai-orchestrator/src/polkadotAgentToolkit.ts`.
+
+It is synchronized with Polkadot's agent-oriented developer workflow:
+
+- official Polkadot AI-agent guidance is referenced in `AGENTS.md`;
+- the current `polkadot-cli` / `dot` skill is version-pinned by the bootstrap script;
+- GitHub Copilot receives repository-specific instructions;
+- read, inspect, encode, and dry-run plans are allowed without signing;
+- transaction submission requires explicit human approval and host-mediated signing;
+- private keys, seed phrases, and secret-bearing CLI flags are blocked from agent tool plans.
+
+### Agent bootstrap
+
+```bash
+npm run agent:setup
+```
+
+This installs the version-matched `dot` CLI agent skill locally for Codex. For Claude Code:
+
+```bash
+npm run agent:setup -- --claude
+```
+
+### Single-click verification
+
+```bash
+npm run finish
+```
+
+The one-click gate validates the Polkadot agent toolkit, smart contracts, PQC, x402 flow,
+web build, and—only when a funded host-managed deployer is configured—real TestNet
+deployment plus independent on-chain verification.

@@ -7,10 +7,17 @@
     "packages/*",
     "apps/*"
   ],
+  "engines": {
+    "node": ">=22.6.0",
+    "npm": ">=10.9.0"
+  },
   "scripts": {
     "finish": "node scripts/one-click-finish.mjs",
     "verify": "node scripts/verify-all.mjs",
     "verify:onchain": "node scripts/verify-onchain.mjs",
+    "agent:setup": "node scripts/setup-polkadot-agent-toolkit.mjs",
+    "agent:verify": "node scripts/verify-agent-toolkit.mjs",
+    "agent:test": "node --experimental-strip-types test/polkadot-agent-toolkit.test.mjs",
     "deploy:polkadotTestnet": "npx hardhat run scripts/deploy-polkadot-testnet.cjs --network polkadotTestnet",
     "compile:contracts": "npx hardhat compile",
     "test:contracts": "npx hardhat test test/contracts.test.cjs",
