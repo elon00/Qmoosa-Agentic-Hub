@@ -94,7 +94,8 @@ async function main() {
     }
   };
 
-  const outPath = path.join(__dirname, "..", "deployments", "westend-testnet.json");
+  const filename = network.name === "hardhat" ? "local-simulation.json" : `${network.name}.json`;
+  const outPath = path.join(__dirname, "..", "deployments", filename);
   fs.writeFileSync(outPath, JSON.stringify(deploymentData, null, 2));
   console.log(`\n📁 Recorded deployment record to: ${outPath}`);
   console.log("===============================================================================");
