@@ -1,0 +1,131 @@
+{
+  "engine": "REA_Reverse_Engineer_Anything",
+  "status": "STRUCTURE_RECONSTRUCTED",
+  "analyzed_files": 41,
+  "manifest": {
+    "AGENTS.md": {
+      "bytes": 2669
+    },
+    "hardhat.config.cjs": {
+      "bytes": 915
+    },
+    "package-lock.json": {
+      "bytes": 133807
+    },
+    "package.json": {
+      "bytes": 2060
+    },
+    "README.md": {
+      "bytes": 7148
+    },
+    ".github\\copilot-instructions.md": {
+      "bytes": 872
+    },
+    "contracts\\Launchpad.sol": {
+      "bytes": 5803
+    },
+    "contracts\\QDOTToken.sol": {
+      "bytes": 4291
+    },
+    "contracts\\TokenFactory.sol": {
+      "bytes": 2226
+    },
+    "contracts\\X402SettlementAdapter.sol": {
+      "bytes": 2606
+    },
+    "deployments\\local-simulation.json": {
+      "bytes": 1124
+    },
+    "scripts\\deploy-polkadot-testnet.cjs": {
+      "bytes": 5208
+    },
+    "scripts\\deploy-testnet.cjs": {
+      "bytes": 4319
+    },
+    "scripts\\one-click-finish.mjs": {
+      "bytes": 4142
+    },
+    "scripts\\rea_inspector.py": {
+      "bytes": 1485
+    },
+    "scripts\\rsi_engine.py": {
+      "bytes": 2039
+    },
+    "scripts\\setup-polkadot-agent-toolkit.mjs": {
+      "bytes": 1439
+    },
+    "scripts\\verify-agent-toolkit.mjs": {
+      "bytes": 1211
+    },
+    "scripts\\verify-all.mjs": {
+      "bytes": 1864
+    },
+    "scripts\\verify-onchain.mjs": {
+      "bytes": 3738
+    },
+    "test\\contracts.test.cjs": {
+      "bytes": 10476
+    },
+    "test\\polkadot-agent-toolkit.test.mjs": {
+      "bytes": 2229
+    },
+    "test\\x402-flow.test.mjs": {
+      "bytes": 3103
+    },
+    ".github\\workflows\\qmoosa-rsi-rea-sync.yml": {
+      "bytes": 531
+    },
+    ".github\\workflows\\verify.yml": {
+      "bytes": 544
+    },
+    "apps\\web\\build.js": {
+      "bytes": 858
+    },
+    "apps\\web\\package.json": {
+      "bytes": 189
+    },
+    "apps\\web\\server.js": {
+      "bytes": 3463
+    },
+    "apps\\web\\public\\index.html": {
+      "bytes": 28132
+    },
+    "packages\\ai-orchestrator\\package.json": {
+      "bytes": 246
+    },
+    "packages\\conway-automaton\\package.json": {
+      "bytes": 247
+    },
+    "packages\\multi-wallet\\package.json": {
+      "bytes": 243
+    },
+    "packages\\pqc-security\\package.json": {
+      "bytes": 405
+    },
+    "packages\\x402-bazaar\\package.json": {
+      "bytes": 294
+    },
+    "packages\\ai-orchestrator\\src\\index.ts": {
+      "bytes": 3103
+    },
+    "packages\\ai-orchestrator\\src\\polkadotAgentToolkit.ts": {
+      "bytes": 3968
+    },
+    "packages\\conway-automaton\\src\\index.ts": {
+      "bytes": 3543
+    },
+    "packages\\multi-wallet\\src\\index.ts": {
+      "bytes": 2122
+    },
+    "packages\\pqc-security\\src\\index.ts": {
+      "bytes": 4785
+    },
+    "packages\\pqc-security\\test\\pqc.test.mjs": {
+      "bytes": 3858
+    },
+    "packages\\x402-bazaar\\src\\index.ts": {
+      "bytes": 2459
+    }
+  },
+  "timestamp": 1794019872
+}
