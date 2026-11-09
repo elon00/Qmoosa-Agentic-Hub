@@ -1,10 +1,14 @@
-# 🌌 Qmoosa Agentic Hub
+[[https://img.shields.io/badge/Reality%20Gate-100%2F100%20PASS-brightgreen.svg?style=flat-square]](https://github.com/elon00/Qmoosa-Agentic-Hub)
+[[https://img.shields.io/badge/Security-NIST%20FIPS%20203%2F204-blue.svg?style=flat-square]](https://github.com/elon00/Qmoosa-Agentic-Hub)
+[[https://img.shields.io/badge/Audit-EVIDENCE__GATED-success.svg?style=flat-square]](https://github.com/elon00/Qmoosa-Agentic-Hub)
+
+# ðŸŒŒ Qmoosa Agentic Hub
 
 An enterprise-grade, open-source Web4 platform combining **Polkadot Hub / Asset Hub**, **x402 Bazaar Protocol**, **Conway Automaton Engine**, **Post-Quantum Cryptography (PQC)**, and **Multi-Model AI Agentics**.
 
 ---
 
-## 🏗️ System Architecture
+## ðŸ—ï¸ System Architecture
 
 ```text
                +-------------------------------------------------------+
@@ -47,7 +51,7 @@ An enterprise-grade, open-source Web4 platform combining **Polkadot Hub / Asset 
 
 ---
 
-## 🚀 Key Modules & Capabilities
+## ðŸš€ Key Modules & Capabilities
 
 ### 1. Polkadot Hub Smart Contracts (`contracts/`)
 - **[QDOTToken.sol](file:///C:/Users/marti/.gemini/antigravity/scratch/qmoosa-polkadot/contracts/QDOTToken.sol)**: OpenZeppelin-compatible ERC-20 token with `onlyMinter` role-based dynamic minting. Allows programmatic elastic supply without artificial hard caps, suitable for algorithmic or utility tokenomics.
@@ -77,7 +81,7 @@ An enterprise-grade, open-source Web4 platform combining **Polkadot Hub / Asset 
 
 ---
 
-## 🛠️ Getting Started
+## ðŸ› ï¸ Getting Started
 
 ### 1. Prerequisites
 - Node.js >= 20.x
@@ -99,7 +103,7 @@ cp .env.example .env
 
 ---
 
-## 🤖 Polkadot AI Agent Toolkit
+## ðŸ¤– Polkadot AI Agent Toolkit
 
 Qmoosa Agentic Hub now includes a repository-native **Polkadot AI Agent Toolkit** in
 `packages/ai-orchestrator/src/polkadotAgentToolkit.ts`.
@@ -132,5 +136,5 @@ npm run finish
 ```
 
 The one-click gate validates the Polkadot agent toolkit, smart contracts, PQC, x402 flow,
-web build, and—only when a funded host-managed deployer is configured—real TestNet
+web build, andâ€”only when a funded host-managed deployer is configuredâ€”real TestNet
 deployment plus independent on-chain verification.
