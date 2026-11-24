@@ -17,3 +17,6 @@ yarn-debug.log*
 yarn-error.log*
 .agents/skills/
 .claude/skills/
+
+# Lean 4 build artifacts
+lean_verify/.lake/
